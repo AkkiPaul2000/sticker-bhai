@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <div className="max-w-7xl mx-auto"><Navbar1/></div>
           
-        <div className="mx-auto flex flex-col max-w-5xl text-2xl gap-2 mb-10">
+        <div className="mx-auto flex flex-col max-w-10xl text-2xl gap-2 mb-10">
         
         {children}</div>
           </ThemeProvider>

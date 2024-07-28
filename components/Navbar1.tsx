@@ -19,12 +19,12 @@ export default function Navbar1() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+          <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
             <MountainIcon className="h-6 w-6" />
             <span className="sr-only">Acme Inc</span>
           </Link>
           <div className="grid gap-2 py-6">
-            <Link href="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
+            <Link href="/" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
               Home
             </Link>
             <Link href="/about" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
