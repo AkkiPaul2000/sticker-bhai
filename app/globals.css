@@ -67,3 +67,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+.aboutBhai,.cartBhai,.profileBhai{
+  background-color: azure;
+  padding: 20rem;
+}

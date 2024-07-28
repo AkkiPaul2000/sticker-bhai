@@ -1,8 +1,11 @@
+import Profile from '@/components/Profile'
 import React from 'react'
 
 function About() {
   return (
-    <div>Profile Bhai</div>
+    <div className=''>
+      <Profile/>
+    </div>
   )
 }
 
