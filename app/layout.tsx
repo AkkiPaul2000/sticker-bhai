@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Navbar from "@/components/Navbar";
+import Navbar1 from "@/components/Navbar1";
  
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,11 +27,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable
         )}
       >
-        <div style={{
-          // backgroundColor:'white',color:'black'
+        <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+        >
+          <div className="max-w-7xl mx-auto"><Navbar1/></div>
           
-        }}>
-          {children}</div>
+        <div className="mx-auto flex flex-col max-w-5xl text-2xl gap-2 mb-10">
+        
+        {children}</div>
+          </ThemeProvider>
         </body>
     </html>
   );
