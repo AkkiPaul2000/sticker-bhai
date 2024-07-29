@@ -68,7 +68,7 @@
   }
 }
 
-.aboutBhai,.cartBhai,.profileBhai{
+.aboutBhai,.cartBhai,.profileBhai,.loginBhai,.registerBhai{
   background-color: azure;
   padding: 20rem;
 }

@@ -8,6 +8,30 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ModeToggle } from "./DarkModeToggle"
 
+
+export const navItems = [
+  {
+    label: "Dashboard",
+    href: "/admin",
+  },
+  {
+    label: "Orders",
+    href: "/admin/orders",
+  },
+  {
+    label: "Products",
+    href: "/admin/products",
+  },
+  {
+    label: "Users",
+    href: "/admin/users",
+  },
+  {
+    label: "Analytics",
+    href: "/admin/analytics",
+  },
+];
+
 export default function Navbar1() {
   return (
     <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
@@ -24,7 +48,7 @@ export default function Navbar1() {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <div className="grid gap-2 py-6">
-            <Link href="/" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
+            <Link href="/" className="flex  w-full items-center py-2 text-lg font-semibold" prefetch={false}>
               Home
             </Link>
             <Link href="/about" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
@@ -101,7 +125,7 @@ function MenuIcon(props:any) {
 }
 
 
-function MountainIcon(props) {
+function MountainIcon(props:any) {
   return (
     <svg
       {...props}

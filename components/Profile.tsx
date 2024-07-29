@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Sticker } from 'lucide-react';
+
 
 export default function Profile() {
   return (
@@ -21,24 +23,26 @@ export default function Profile() {
 
           </Avatar>
           <div className="space-y-1">
-            <h1 className="text-2xl font-bold">Alice Johnson</h1>
-            <p className="text-gray-500 dark:text-gray-400">Senior Software Engineer</p>
+            <h1 className="text-2xl font-bold">John Doe</h1>
+            <p className="text-gray-500 dark:text-gray-400">www.johndoe@gmail.com</p>
           </div>
         </div>
-        <p className="text-gray-500 dark:text-gray-400">
-          Passionate about building accessible and inclusive web experiences.
-        </p>
+        
       </div>
       <div className="space-y-4">
         <Card>
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
-              <Input id="name" value="Alice Johnson" />
+              <Input id="name" value="John Doe" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="bio">Bio</Label>
-              <Textarea id="bio" placeholder="Enter your bio" className="min-h-[100px]" />
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" value="www.johndoe@gmail.com" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone</Label>
+              <Input id="phone" value="XXXXXXXXXXX" />
             </div>
           </CardContent>
           <CardFooter>
@@ -49,21 +53,21 @@ export default function Profile() {
       <div className="space-y-4">
         <h2 className="text-2xl font-bold">Recent Activity</h2>
         <div className="space-y-4">
-          <Card>
-            <CardContent className="flex items-center space-x-4">
-              <CalendarIcon className="w-6 h-6" />
+          <Card className="">
+            <CardContent className="flex items-center space-x-4 p-6">
+              <Sticker className="w-8 h-8" />
               <div className="grid items-center grid-rows-2">
-                <p className="text-sm text-gray-500 dark:text-gray-400">Scheduled a meeting</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">2 hours ago</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Bought This</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Sticker 1</p>
               </div>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="flex items-center space-x-4">
-              <MessageCircleIcon className="w-6 h-6" />
+            <CardContent className="flex items-center space-x-4 p-6">
+              <Sticker className="w-8 h-8" />
               <div className="grid items-center grid-rows-2">
-                <p className="text-sm text-gray-500 dark:text-gray-400">Sent a message</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">1 day ago</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Bought This</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Sticker 2</p>
               </div>
             </CardContent>
           </Card>
@@ -73,47 +77,7 @@ export default function Profile() {
   )
 }
 
-function CalendarIcon(props:any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8 2v4" />
-      <path d="M16 2v4" />
-      <rect width="18" height="18" x="3" y="4" rx="2" />
-      <path d="M3 10h18" />
-    </svg>
-  )
-}
 
-
-function MessageCircleIcon(props:any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-    </svg>
-  )
-}
 
 
 function XIcon(props:any) {
