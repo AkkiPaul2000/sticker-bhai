@@ -11,7 +11,7 @@ import { ModeToggle } from "./DarkModeToggle"
 
 export const navItems = [
   {
-    label: "Dashboard1",
+    label: "Dashboard",
     href: "/admin",
   },
   {
