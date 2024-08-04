@@ -3,6 +3,7 @@
  * @see https://v0.dev/t/uk3TW2ipeCA
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+"use client"
 import { Avatar } from "@/components/ui/avatar"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
@@ -11,9 +12,19 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Sticker } from 'lucide-react';
+import { signIn, useSession } from "next-auth/react"
 
 
 export default function Profile() {
+const {status,data:session}=useSession()
+if(status==="unauthenticated")return(
+<div className="profileBhai ">
+  <div style={{display:"flex",alignContent:"center",justifyContent:'space-around',color:'Pink'}}>
+
+    <span style={{textAlign:"center",alignContent:"center"}}>SignIn to see your profile</span> <Button onClick={()=>signIn('google')}>Sign here with Google</Button>
+    </div>
+    </div>
+)
   return (
     <div className="grid max-w-3xl gap-4 px-4 mx-auto lg:grid-cols-2 lg:gap-6 xl:gap-10">
       <div className="space-y-4 lg:col-span-2">

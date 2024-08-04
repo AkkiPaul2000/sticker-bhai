@@ -3,11 +3,12 @@
  * @see https://v0.dev/t/lJwnQlHSEBA
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+"use client"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ModeToggle } from "./DarkModeToggle"
-
+import { signIn,SessionProvider, useSession, signOut } from "next-auth/react"
 
 export const navItems = [
   {
@@ -33,6 +34,7 @@ export const navItems = [
 ];
 
 export default function Navbar1() {
+  const {status}=useSession();
   return (
     <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
       <Sheet>
@@ -96,8 +98,9 @@ export default function Navbar1() {
         >
             My Cart
         </Link>
+        {console.log(status)}
         <ModeToggle/>
-
+        {status==="authenticated"?<Button onClick={()=>signOut()}>SignOut</Button>:<Button onClick={()=>signIn('google')}>SignIn with google</Button>}
       </nav>
     </header>
   )

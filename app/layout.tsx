@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Navbar1 from "@/components/Navbar1";
+import {NextAuthProvider} from "./provider"
  
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable
         )}
       >
+        <NextAuthProvider>
         <ThemeProvider
         attribute="class"
         defaultTheme="system"
@@ -39,6 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         
         {children}</div>
           </ThemeProvider>
+          </NextAuthProvider>
         </body>
     </html>
   );
