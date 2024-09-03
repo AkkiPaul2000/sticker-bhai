@@ -20,22 +20,23 @@ const {status,data:session}=useSession()
 if(status==="unauthenticated")return(
 <div className="profileBhai ">
   <div style={{display:"flex",alignContent:"center",justifyContent:'space-around',color:'Pink'}}>
-
     <span style={{textAlign:"center",alignContent:"center"}}>SignIn to see your profile</span> <Button onClick={()=>signIn('google')}>Sign here with Google</Button>
     </div>
     </div>
 )
+const imageSrc = session?.user?.image || "/images/avatar.jpg";
+
   return (
     <div className="grid max-w-3xl gap-4 px-4 mx-auto lg:grid-cols-2 lg:gap-6 xl:gap-10">
       <div className="space-y-4 lg:col-span-2">
         <div className="flex items-center space-x-4">
           <Avatar className="w-30 h-30">
-          <Image src="/images/avatar.jpg" alt="Avatar" width="200" height="200" className="rounded-full" /> 
+          <Image src={imageSrc} alt="Avatar" width="200" height="200" className="rounded-full" /> 
 
           </Avatar>
           <div className="space-y-1">
-            <h1 className="text-2xl font-bold">John Doe</h1>
-            <p className="text-gray-500 dark:text-gray-400">www.johndoe@gmail.com</p>
+            <h1 className="text-2xl font-bold">{session?.user?.name || "John Doe"}</h1>
+            <p className="text-gray-500 dark:text-gray-400">{session?.user?.email || "www.johndoe@gmail.com"}</p>
           </div>
         </div>
         
